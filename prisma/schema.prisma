@@ -21,3 +21,16 @@ model Estudante {
 
   @@map("estudante")
 }
+
+model Vaga {
+  cd_vaga              Int      @id @default(autoincrement())
+  nm_vaga              String
+  nm_imagemUrl         String
+  nm_empresa           String
+  eh_favorito          Boolean  @default(false)
+  dt_postagem          DateTime @default(now())
+  ds_vaga              String
+  ds_responsabilidades String
+  ds_requisitos        String
+  ds_logradouro        String
+}
