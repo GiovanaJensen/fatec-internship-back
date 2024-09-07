@@ -11,13 +11,21 @@ datasource db {
 }
 
 model Estudante {
-  cd_estudante    Int    @id @default(autoincrement())
-  nm_estudante    String
-  nm_email        String @unique
-  cd_ra           String @unique
-  nm_curso        String
-  ds_preferencias String
-  cd_senha        String
+  cd_estudante     Int    @id @default(autoincrement())
+  nm_estudante     String
+  nm_email         String @unique
+  cd_ra            String @unique
+  nm_curso         String
+  ds_preferencias  String
+  cd_senha         String
+  nm_imagemPerfil  String @default("")
+  nm_nacionalidade String @default("")
+  ds_objetivo      String @default("")
+  ds_nivelIngles   String @default("")
+  ds_genero        String @default("")
+  cd_unidadeFatec  Int    @default(1)
+
+  unidadeFatec UnidadeFatec @relation(fields: [cd_unidadeFatec], references: [cd_unidadeFatec])
 
   @@map("estudante")
 }
@@ -33,4 +41,18 @@ model Vaga {
   ds_responsabilidades String
   ds_requisitos        String
   ds_logradouro        String
+}
+
+model Dica {
+  cd_dica      Int    @id @default(autoincrement())
+  nm_dica      String
+  nm_imagemUrl String
+  nm_autor     String
+}
+
+model UnidadeFatec {
+  cd_unidadeFatec Int    @id @default(autoincrement())
+  nm_unidadeFatec String
+
+  estudantes Estudante[]
 }
