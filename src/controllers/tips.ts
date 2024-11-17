@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { prismaClient } from "..";
 
 export const addTip = async (req: Request, res: Response) => {
-    const { name, imageUrl, writer} = req.body;
+    const { name, imageUrl, writer, tipUrl } = req.body;
     if (!name || !imageUrl || !writer){
         return res.status(400).json({ error: `Todos os campos são obrigatórios`})
     }
@@ -11,7 +11,8 @@ export const addTip = async (req: Request, res: Response) => {
         data: {
             nm_dica: name,
             nm_imagemUrl: imageUrl,
-            nm_autor: writer
+            nm_autor: writer,
+            nm_dicaUrl: tipUrl
         }
     })
     res.status(201).json(tip);

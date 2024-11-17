@@ -6,7 +6,7 @@ const fatecRoutes:Router = Router()
 fatecRoutes.post('', addFatec)
 fatecRoutes.get('/:id', getFatecById)
 fatecRoutes.get('', getAllFatecs)
-fatecRoutes.patch('/:id', updateFatec)
+fatecRoutes.put('/:id', updateFatec)
 fatecRoutes.delete('/:id', deleteFatec)
 
 export default fatecRoutes

@@ -6,7 +6,7 @@ const tipRoutes:Router = Router()
 tipRoutes.post('', addTip)
 tipRoutes.get('/:id', getTipById)
 tipRoutes.get('', getAllTips)
-tipRoutes.patch('/:id', updateTip)
+tipRoutes.put('/:id', updateTip)
 tipRoutes.delete('/:id', deleteTip)
 
 export default tipRoutes

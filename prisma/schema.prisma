@@ -48,6 +48,7 @@ model Dica {
   nm_dica      String
   nm_imagemUrl String
   nm_autor     String
+  nm_dicaUrl   String
 }
 
 model UnidadeFatec {

@@ -3,10 +3,10 @@ import { addVacancy, deleteVacancy, getAllVacancies, getVacancyById, updateVacan
 
 const vacancyRoutes:Router = Router()
 
-vacancyRoutes.post('/vacancy', addVacancy)
-vacancyRoutes.get('/vacancy/:id', getVacancyById)
-vacancyRoutes.get('/vacancy', getAllVacancies)
-vacancyRoutes.patch('/vacancy/:id', updateVacancy)
-vacancyRoutes.delete('/vacancy/:id', deleteVacancy)
+vacancyRoutes.post('', addVacancy)
+vacancyRoutes.get('/:id', getVacancyById)
+vacancyRoutes.get('', getAllVacancies)
+vacancyRoutes.put('/:id', updateVacancy)
+vacancyRoutes.delete('/:id', deleteVacancy)
 
 export default vacancyRoutes

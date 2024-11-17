@@ -7,8 +7,8 @@ import fatecRoutes from './fatec';
 const rootRouter:Router = Router()
 
 rootRouter.use('/auth', authRoutes)
-rootRouter.use('', vacancyRoutes)
-rootRouter.use('/tip', tipRoutes)
+rootRouter.use('/vacancy', vacancyRoutes)
+rootRouter.use('/tips', tipRoutes)
 rootRouter.use('/fatec', fatecRoutes)
 
 export default rootRouter;
